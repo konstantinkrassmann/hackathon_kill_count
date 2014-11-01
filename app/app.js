@@ -13,4 +13,7 @@ config(['$routeProvider', function($routeProvider) {
             .otherwise({
                 redirectTo: '/'
             });
-}]);
+}])
+.value("Settings", {
+    BASE_URL: "https://killcount.herokuapp.com"
+});

@@ -2,3 +2,27 @@
 
 
 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.blood-chart-container {
+  > div{
+    position:relative;
+    float:left;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-image: url('./blood-line.png');
+    background-repeat: repeat-y;
+    > .blood-drip {
+      background-image: url('./blood-drip.png');
+      width: 18px;
+      height: 15px;
+      position: absolute;
+      bottom: 0px
+    }
+  }
+}

@@ -1,2 +1,12 @@
 <div data-ng-include="'views/commons/header.tpl.html'"></div>
 
+Please select an category:
+<select data-ng-model="selectedCategory"
+        data-ng-options="category as category for category in categories">
+</select>
+<i class="fa fa-refresh fa-spin" data-ng-if="blLoadingKillers"></i>
+
+<div data-vertical-blood-bar-chart="serial_killers"></div>
+
+
+<div data-vertical-bar-chart="serial_killers"></div>
