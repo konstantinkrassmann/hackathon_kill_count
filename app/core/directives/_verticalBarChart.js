@@ -49,13 +49,13 @@ hackAppKillCount.directive("verticalBarChart", function () {
                     {
                         return 1;
                     }
-                    if(a.lowestCasualties > b.lowestCasualties){
+                    if(a.lowestCasualties < b.lowestCasualties){
                         return -1;
                     }
                     return 0;
                 }
 
-              //  console.log(scope.dataSet.sort(compare));
+                 //console.log(scope.dataSet.sort(compare));
 
 
                 //create scale for height
@@ -92,7 +92,7 @@ hackAppKillCount.directive("verticalBarChart", function () {
                         return i* (width / scope.dataSet.length + 1) + margin.left + 5;
                     })
                     .attr("width", function(){
-                        return width / scope.dataSet.length;
+                        return (width-margin.left) / scope.dataSet.length;
                     })
                     .attr("y", 0)
                     .attr("height", 0)
