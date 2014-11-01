@@ -33,6 +33,15 @@ hackAppKillCount.controller("StartController", function($scope, DAO){
                     });
                 }
                 break;
+        case $scope.CATEGORY.TERRORISM:
+                if($scope.terrorism.length == 0){
+                    $scope.blLoading = true;
+                    DAO.getTerroristAttacks().then(function(terrorism){
+                        $scope.terorrism = terrorism;
+                        $scope.blLoading = false;
+                    });
+                }
+                break;
         }
         $scope.selectedCategory = strCategory;
     };
@@ -61,6 +70,7 @@ hackAppKillCount.controller("StartController", function($scope, DAO){
                 '<a class="text-primary" href="'+ d.wikipediaLink +'" class="text-danger" target="_blank">Mehr erfahren</a> <br>'
         };
 
+    $scope.terrorism = [];
 
 
 });

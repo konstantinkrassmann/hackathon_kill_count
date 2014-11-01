@@ -25,6 +25,14 @@ hackAppKillCount.service("DAO", function($q, $http, URLBuilder){
 
         //return $q.when(serial_killer_mock);
     };
+    this.getTerroristAttacks = function (){
+
+        return $http.get(URLBuilder.getUrl("terroristattacks"))
+            .then(function(response){
+                return response.data;
+            });
+    };
+
     return this;
 });
 
