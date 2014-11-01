@@ -1,11 +1,13 @@
 <div data-ng-include="'views/commons/header.tpl.html'"></div>
-
-Please select an category:
-<select data-ng-model="selectedCategory"
-        data-ng-options="category as category for category in categories">
-</select>
 <i class="fa fa-refresh fa-spin" data-ng-if="blLoadingKillers"></i>
+<div class="btn-group">
+    <button type="button" data-ng-click="selectCategory(CATEGORY.SERIAL_KILLER)" class="btn btn-default">Serienmörder</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.GENOCIDE)" class="btn btn-default">Genozide</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.TERRORISM)" class="btn btn-default">Terrorismus</button>
+</div>
 
 
-<div data-vertical-bar-chart="serial_killers"></div>
-<div data-vertical-bar-chart="genocides"></div>
+<div data-ng-if="blLoading != true" class="chart-box">
+    <div data-ng-if="selectedCategory == CATEGORY.SERIAL_KILLER" data-vertical-bar-chart="serial_killers" data-tip-template="serial_killer_tip_template"></div>
+    <div data-ng-if="selectedCategory == CATEGORY.GENOCIDE" data-vertical-bar-chart="genocides" data-tip-template="genocide_tip_template"></div>
+</div>
