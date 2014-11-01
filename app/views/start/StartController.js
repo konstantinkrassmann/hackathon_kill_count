@@ -1,7 +1,7 @@
 /**
  * Created by Kostja on 31.10.14.
  */
-hackAppKillCount.controller("StartController", function($scope, SerialKillerDAO){
+hackAppKillCount.controller("StartController", function($scope, DAO){
     $scope.START ="StartController";
 
     $scope.categories = [
@@ -14,9 +14,18 @@ hackAppKillCount.controller("StartController", function($scope, SerialKillerDAO)
     $scope.serial_killers = [];
 
     $scope.blLoadingKillers = true;
-    SerialKillerDAO.getSerialKillers().then(function(killers){
+
+    DAO.getSerialKillers().then(function(killers){
         console.log(arguments);
         $scope.blLoadingKillers = false;
         $scope.serial_killers = killers;
-    })
+    });
+
+    $scope.genocides = [];
+
+    $scope.blLoadingGenocides = true;
+    DAO.getGenocides().then(function(genocides){
+        $scope.genocides = genocides;
+        $scope.blLoadingGenocides = false;
+    });
 });

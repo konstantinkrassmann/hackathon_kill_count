@@ -1,7 +1,7 @@
 /**
  * Created by Kostja on 01.11.14.
  */
-hackAppKillCount.service("SerialKillerDAO", function($q, $http, URLBuilder){
+hackAppKillCount.service("DAO", function($q, $http, URLBuilder){
     /**
      * Fetch all serial killers
      * @returns {*}
@@ -9,6 +9,16 @@ hackAppKillCount.service("SerialKillerDAO", function($q, $http, URLBuilder){
     this.getSerialKillers = function (){
 
         return $http.get(URLBuilder.getUrl("serialkillers"))
+            .then(function(response){
+                return response.data;
+            });
+
+        //return $q.when(serial_killer_mock);
+    };
+
+    this.getGenocides = function ()
+    {
+        return $http.get(URLBuilder.getUrl("genocides"))
             .then(function(response){
                 return response.data;
             });
