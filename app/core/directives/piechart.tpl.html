@@ -7,5 +7,5 @@
     <span>For every killed US soldier <strong class="text-danger">~{{summary.Insurgents.totalCasualties / summary['US Soldiers'].totalCasualties|round}}</strong> terrorists got killed.</span>
 </div>
 <div>
-    <span>For every killed participant of the war <strong class="text-danger">~{{ summary.Civilian.totalCasualties / (summary['US Soldiers'].totalCasualties+summary.Insurgents.totalCasualties)|round}}</strong> civilians got killed.</span>
+    <span>For every killed terrorist <strong class="text-danger">~{{ summary.Civilian.totalCasualties / summary.Insurgents.totalCasualties|round}}</strong> civilians got killed.</span>
 </div>
