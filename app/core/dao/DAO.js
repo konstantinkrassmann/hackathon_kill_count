@@ -54,6 +54,36 @@ hackAppKillCount.service("DAO", function ($q, $http, URLBuilder) {
 
 var dicators_mock = [
     {
+        "region": "China",
+        "lowestCasualties": 78000000,
+        "name": "Mao Zedong",
+        "yearsActive": "1943-1976"
+    },
+    {
+        "region": "UdSSR",
+        "lowestCasualties": 23000000,
+        "name": "Josef Stalin",
+        "yearsActive": "1922-1953"
+    },
+    {
+        "region": "Germany",
+        "lowestCasualties": 17000000,
+        "name": "Adolf Hitler",
+        "yearsActive": "1933-1945"
+    },
+    {
+        "region": "Belgium",
+        "lowestCasualties": 15000000,
+        "name": "Leopold II of Belgium",
+        "yearsActive": "1865-1909"
+    },
+    {
+        "region": "Japan",
+        "lowestCasualties": 5000000,
+        "name": "Hideki Tojo",
+        "yearsActive": "1941-1944"
+    },
+    {
         "region": "Combodia",
         "lowestCasualties": 1700000,
         "name": "Pol Pot",
@@ -70,7 +100,8 @@ var dicators_mock = [
         "lowestCasualties": 1500000,
         "name": "Mengistu Haite Mariam",
         "yearsActive": "1963-1981"
-    }
+    },
+
 ];
 
 var serial_killer_mock =
