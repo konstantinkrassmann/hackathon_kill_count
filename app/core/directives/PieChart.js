@@ -6,12 +6,12 @@ hackAppKillCount.directive("pieChart", function () {
         scope: {
             "dataSet": "=pieChart"
         },
-        template:'<div class="pie-chart-box"></div>',
+        templateUrl:'core/directives/piechart.tpl.html',
         link: function (scope, element) {
             var r = 200;
 
             var color = d3.scale.ordinal()
-                .range(["yellow", "blue", "orange"]);
+                .range(["#E60000", "#FF3300", "#661400"]);
 
             var canvas = d3.select($(element).find(".pie-chart-box")[0])
                 .append("svg")
@@ -20,6 +20,7 @@ hackAppKillCount.directive("pieChart", function () {
 
             scope.render = function (data)
             {
+                scope.displayData = data;
                 var group = canvas.append("g")
                 .attr("transform", "translate(300,300)");
 
@@ -88,7 +89,7 @@ hackAppKillCount.directive("pieChart", function () {
                     arrSummary[dataToTransform[i].faction].totalCasualties += dataToTransform[i].casualties;
                     arrSummary[dataToTransform[i].faction].event.push(dataToTransform[i]);
                 }
-                console.log(arrSummary);
+                scope.summary = arrSummary;
 
                 var arrOutput = [];
 

@@ -129,7 +129,7 @@ hackAppKillCount.controller("StartController", function ($scope, DAO, $filter) {
     $scope.dictators_tip_template =
         function (d) {
             return '<strong>Name:</strong> <span class="text-danger">' + d.name + '</span> <br>' +
-                '<strong>Indirectly killed victims:</strong> <span class="text-danger">' + d.lowestCasualties + '</span> <br>' +
+                '<strong>Indirectly killed victims:</strong> <span class="text-danger">' + $filter("humanize")(d.lowestCasualties) + '</span> <br>' +
                 '<strong>Activity:</strong> <span class="text-danger">' + d.yearsActive + '</span> <br>' +
                 '<strong>Region:</strong> <span class="text-danger">' + d.region + '</span> <br>' +
                 '<a class="text-primary" href="' + d.wikipediaLink + '" class="text-danger" target="_blank">Find out more</a> <br>'
