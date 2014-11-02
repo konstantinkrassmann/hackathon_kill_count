@@ -9,7 +9,8 @@ hackAppKillCount.controller("StartController", function ($scope, DAO, $filter) {
         "GENOCIDE": "g",
         "TERRORISM": "t",
         "WW2": "ww2",
-        "DICTATORS": "dd"
+        "DICTATORS": "dd",
+        "IRAQ": "iraq"
     };
 
     $scope.blLoading = true;
@@ -60,6 +61,16 @@ hackAppKillCount.controller("StartController", function ($scope, DAO, $filter) {
                     DAO.getDictators().then(function (dictators)
                     {
                         $scope.dictators = dictators;
+                        $scope.blLoading = false;
+                    });
+                }
+                break;
+            case $scope.CATEGORY.IRAQ:
+                if ($scope.iraqCasualties.length == 0) {
+                    $scope.blLoading = true;
+                    DAO.getIraq().then(function (iraqCasualties)
+                    {
+                        $scope.iraqCasualties = iraqCasualties;
                         $scope.blLoading = false;
                     });
                 }
@@ -123,4 +134,7 @@ hackAppKillCount.controller("StartController", function ($scope, DAO, $filter) {
                 '<strong>Region:</strong> <span class="text-danger">' + d.region + '</span> <br>' +
                 '<a class="text-primary" href="' + d.wikipediaLink + '" class="text-danger" target="_blank">Find out more</a> <br>'
         };
+
+    $scope.iraqCasualties = [];
+
 });

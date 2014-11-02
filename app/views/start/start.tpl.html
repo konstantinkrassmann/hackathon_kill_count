@@ -1,11 +1,12 @@
 <div data-ng-include="'views/commons/header.tpl.html'"></div>
 <i class="fa fa-refresh fa-spin" data-ng-if="blLoadingKillers"></i>
 <div class="btn-group">
+    <button type="button" data-ng-click="selectCategory(CATEGORY.DICTATORS)" class="btn btn-default">Dictators</button>
     <button type="button" data-ng-click="selectCategory(CATEGORY.SERIAL_KILLER)" class="btn btn-default">Serial killer</button>
     <button type="button" data-ng-click="selectCategory(CATEGORY.GENOCIDE)" class="btn btn-default">Genocide</button>
     <button type="button" data-ng-click="selectCategory(CATEGORY.TERRORISM)" class="btn btn-default">Terrorism</button>
     <button type="button" data-ng-click="selectCategory(CATEGORY.WW2)" class="btn btn-default">World War 2</button>
-    <button type="button" data-ng-click="selectCategory(CATEGORY.DICTATORS)" class="btn btn-default">Dictators</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.IRAQ)" class="btn btn-default">Iraq War</button>
 </div>
 
 
@@ -19,4 +20,6 @@
     <div data-ng-if="selectedCategory == CATEGORY.WW2" data-vertical-bar-chart="ww2casualties" data-tip-template="ww2_tip_template"></div>
 
     <div data-ng-if="selectedCategory == CATEGORY.DICTATORS" data-vertical-bar-chart="dictators" data-tip-template="dictators_tip_template"></div>
+
+    <div data-ng-if="selectedCategory == CATEGORY.IRAQ" data-pie-chart="iraqCasualties"></div>
 </div>
