@@ -1,12 +1,12 @@
 <div data-ng-include="'views/commons/header.tpl.html'"></div>
 <i class="fa fa-refresh fa-spin" data-ng-if="blLoadingKillers"></i>
 <div class="btn-group">
-    <button type="button" data-ng-click="selectCategory(CATEGORY.DICTATORS)" class="btn btn-default">Dictators</button>
-    <button type="button" data-ng-click="selectCategory(CATEGORY.SERIAL_KILLER)" class="btn btn-default">Serial killer</button>
-    <button type="button" data-ng-click="selectCategory(CATEGORY.GENOCIDE)" class="btn btn-default">Genocide</button>
-    <button type="button" data-ng-click="selectCategory(CATEGORY.TERRORISM)" class="btn btn-default">Terrorism</button>
-    <button type="button" data-ng-click="selectCategory(CATEGORY.WW2)" class="btn btn-default">World War 2</button>
-    <button type="button" data-ng-click="selectCategory(CATEGORY.IRAQ)" class="btn btn-default">Iraq War</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.DICTATORS)" data-ng-class="{'active-btn':selectedCategory == CATEGORY.DICTATORS}" class="btn btn-default">Dictators</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.SERIAL_KILLER)" data-ng-class="{'active-btn':selectedCategory == CATEGORY.SERIAL_KILLER}" class="btn btn-default">Serial killer</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.GENOCIDE)" data-ng-class="{'active-btn':selectedCategory == CATEGORY.GENOCIDE}" class="btn btn-default">Genocide</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.TERRORISM)" data-ng-class="{'active-btn':selectedCategory == CATEGORY.TERRORISM}" class="btn btn-default">Terrorism</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.WW2)" data-ng-class="{'active-btn':selectedCategory == CATEGORY.WW2}" class="btn btn-default">World War 2</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.IRAQ)" data-ng-class="{'active-btn':selectedCategory == CATEGORY.IRAQ}" class="btn btn-default">Iraq War</button>
 </div>
 
 

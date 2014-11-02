@@ -63,7 +63,6 @@ hackAppKillCount.directive("map", function ($modal) {
                             summary[sovietBelongings[j]].casualties = newDataSet[i].lowestCasualties;
                             summary[sovietBelongings[j]].event = [newDataSet[i]];
                         }
-                        console.log(summary);
                         continue;
                     }
 
@@ -101,7 +100,7 @@ hackAppKillCount.directive("map", function ($modal) {
                     summary[i].fillKey = fillKey;
                     fills[fillKey] = fillKey;
                 }
-                console.log(summary);
+
                 return {
                     summary: summary,
                     fills: fills

@@ -75,7 +75,8 @@ var dicators_mock = [
         "region": "Belgium",
         "lowestCasualties": 15000000,
         "name": "Leopold II of Belgium",
-        "yearsActive": "1865-1909"
+        "yearsActive": "1865-1909",
+
     },
     {
         "region": "Japan",
