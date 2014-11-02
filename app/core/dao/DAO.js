@@ -39,10 +39,7 @@ hackAppKillCount.service("DAO", function ($q, $http, URLBuilder) {
     };
 
     this.getDictators = function () {
-        return $http.get(URLBuilder.getUrl("ww2casualties"))
-            .then(function (response) {
-                return response.data;
-            });
+        return $q.when(dicators_mock);
     };
 
     return this;
@@ -54,8 +51,20 @@ var dicators_mock = [
         "lowestCasualties": 1700000,
         "name": "Pol Pot",
         "yearsActive": "1963-1981"
+    },
+    {
+        "region": "North Korea",
+        "lowestCasualties": 1600000,
+        "name": "Kim II Sung",
+        "yearsActive": "1948-1994"
+    },
+    {
+        "region": "Ethiopia",
+        "lowestCasualties": 1500000,
+        "name": "Mengistu Haite Mariam",
+        "yearsActive": "1963-1981"
     }
-]
+];
 
 var serial_killer_mock =
     [

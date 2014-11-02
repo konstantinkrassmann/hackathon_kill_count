@@ -5,14 +5,18 @@
     <button type="button" data-ng-click="selectCategory(CATEGORY.GENOCIDE)" class="btn btn-default">Genocide</button>
     <button type="button" data-ng-click="selectCategory(CATEGORY.TERRORISM)" class="btn btn-default">Terrorism</button>
     <button type="button" data-ng-click="selectCategory(CATEGORY.WW2)" class="btn btn-default">World War 2</button>
+    <button type="button" data-ng-click="selectCategory(CATEGORY.DICTATORS)" class="btn btn-default">Dictators</button>
 </div>
 
 
 <div data-ng-if="blLoading != true" class="chart-box">
     <div data-ng-if="selectedCategory == CATEGORY.SERIAL_KILLER" data-vertical-bar-chart="serial_killers" data-tip-template="serial_killer_tip_template"></div>
+
     <div data-ng-if="selectedCategory == CATEGORY.GENOCIDE" data-vertical-bar-chart="genocides" data-tip-template="genocide_tip_template"></div>
     <div data-ng-if="selectedCategory == CATEGORY.TERRORISM" data-map="terrorismAttacks" data-map-country-tooltip="terrorismAttacksCountryTooltip" data-map-modal-url="core/directives/terrorism.modal.tpl.html" style="position: relative; width: 1000px; height: 500px; margin: 0 auto;"></div>
 
     <div data-ng-if="selectedCategory == CATEGORY.WW2" data-map="ww2casualties" data-map-country-tooltip="ww2countryTooltip" style="position: relative; width: 1000px; height: 500px; margin: 0 auto;"></div>
     <div data-ng-if="selectedCategory == CATEGORY.WW2" data-vertical-bar-chart="ww2casualties" data-tip-template="ww2_tip_template"></div>
+
+    <div data-ng-if="selectedCategory == CATEGORY.DICTATORS" data-vertical-bar-chart="dictators" data-tip-template="dictators_tip_template"></div>
 </div>

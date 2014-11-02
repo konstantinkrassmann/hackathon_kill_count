@@ -42,7 +42,6 @@ hackAppKillCount.directive("verticalBarChart", function () {
 
                 var victimsMax = victimsHighestMax > victimsLowestMax ?  victimsHighestMax: victimsLowestMax;
 
-                console.log(victimsMax)
 
                 function compare(a,b){
                     if(a.lowestCasualties > b.lowestCasualties)
@@ -84,6 +83,7 @@ hackAppKillCount.directive("verticalBarChart", function () {
                 svg.call(tip);
 
                 var bar_width = (width-margin.left-100) / scope.dataSet.length;
+
 
                 svg.selectAll("bar")
                     .append("g")
