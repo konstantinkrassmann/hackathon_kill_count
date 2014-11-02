@@ -68,7 +68,7 @@ hackAppKillCount.controller("StartController", function ($scope, DAO, $filter) {
             case $scope.CATEGORY.IRAQ:
                 if ($scope.iraqCasualties.length == 0) {
                     $scope.blLoading = true;
-                    DAO.getIraq().then(function (iraqCasualties)
+                    DAO.getIraqWarCasualties().then(function (iraqCasualties)
                     {
                         $scope.iraqCasualties = iraqCasualties;
                         $scope.blLoading = false;
