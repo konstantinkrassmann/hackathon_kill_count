@@ -13,7 +13,7 @@ hackAppKillCount.directive("verticalBarChart", function () {
                 width = 600 - margin.left - margin.right,
                 height = 500 - margin.top - margin.bottom;
 
-            var svg = d3.select("body")
+            var svg = d3.select(element[0])
                 .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
@@ -24,7 +24,7 @@ hackAppKillCount.directive("verticalBarChart", function () {
 
             scope.render = function () {
 
-                width = $(".chart-box").outerWidth(true) - margin.left - margin.right;
+               // width = $(".chart-box").outerWidth(true) - margin.left - margin.right;
                 svg.attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom);
 
@@ -83,16 +83,19 @@ hackAppKillCount.directive("verticalBarChart", function () {
 
                 svg.call(tip);
 
+                var bar_width = (width-margin.left-100) / scope.dataSet.length;
+
                 svg.selectAll("bar")
                     .append("g")
                     .data(scope.dataSet)
                     .enter()
                     .append("rect")
                     .attr("x", function(d,i){
-                        return i* (width / scope.dataSet.length + 1) + margin.left + 5;
+                        return i* bar_width + margin.left + 5;
                     })
                     .attr("width", function(){
-                        return (width-margin.left) / scope.dataSet.length;
+
+                        return bar_width;
                     })
                     .attr("y", 0)
                     .attr("height", 0)
@@ -116,17 +119,16 @@ hackAppKillCount.directive("verticalBarChart", function () {
                         return linearScale(d.highestCasualties);
                     });
 
-
                 svg.selectAll("bar")
                     .append("g")
                     .data(scope.dataSet)
                     .enter()
                     .append("rect")
                     .attr("x", function(d,i){
-                        return i* (width / scope.dataSet.length + 1) + margin.left + 5;
+                        return i* (bar_width) + margin.left + 5;
                     })
                     .attr("width", function(){
-                        return width / scope.dataSet.length;
+                        return bar_width
                     })
                     .attr("y", 0)
                     .attr("height", 0)
