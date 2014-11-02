@@ -42,6 +42,13 @@ hackAppKillCount.service("DAO", function ($q, $http, URLBuilder) {
         return $q.when(dicators_mock);
     };
 
+    this.getIraqWar = function () {
+        return $http.get(URLBuilder.getUrl("iraqwarcasualties"))
+            .then(function (response) {
+                return response.data;
+            });
+    };
+
     return this;
 });
 
